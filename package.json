@@ -14,7 +14,7 @@
   },
   "author": "Kamrul Saad",
   "license": "ISC",
-  "lint-staged" : {
+  "lint-staged": {
     "src/**/*.ts": "yarn lint-prettier"
   },
   "devDependencies": {

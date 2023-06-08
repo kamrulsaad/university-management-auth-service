@@ -7,7 +7,12 @@ app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-app.get('/', (req: Request, res: Response) => {
+// application routes
+import usersRoute from './app/modules/users/users.route'
+
+app.use('/api/v1/users/', usersRoute)
+
+app.get('/', async (req: Request, res: Response) => {
   res.send('Working Successfully')
 })
 
