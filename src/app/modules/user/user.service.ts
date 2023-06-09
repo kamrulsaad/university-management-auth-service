@@ -1,7 +1,8 @@
 import config from '../../../config'
-import { IUser } from './users.interface'
-import { User } from './users.model'
-import { generateUserId } from './users.utils'
+import AppError from '../../../errors/ApiError'
+import { IUser } from './user.interface'
+import { User } from './user.model'
+import { generateUserId } from './user.utils'
 
 const createUser = async (user: IUser): Promise<IUser | null> => {
   // auto generated incremental id, default password
@@ -16,12 +17,12 @@ const createUser = async (user: IUser): Promise<IUser | null> => {
   const createdUser = await User.create(user)
 
   if (!createUser) {
-    throw new Error('Error creating user')
+    throw new AppError('Error creating user', 400)
   }
 
   return createdUser
 }
 
-export default {
+export const UserService = {
   createUser,
 }
