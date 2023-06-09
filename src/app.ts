@@ -13,8 +13,8 @@ import { UserRoutes } from './app/modules/user/user.route'
 
 app.use('/api/v1/users/', UserRoutes)
 
-// app.get('/', async (req: Request, res: Response, next: NextFunction) => {
-//   Promise.reject(new Error('Unhandled promise rejection'))
+// app.get('/', (req: Request, res: Response, next: NextFunction) => {
+//  throw new Error("Testing error")
 // })
 
 //global error handler
