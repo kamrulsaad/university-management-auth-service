@@ -10,8 +10,10 @@ app.use(express.urlencoded({ extended: true }));
 
 // application routes
 import { UserRoutes } from './app/modules/user/user.route';
+import { AcademicSemesterRoutes } from './app/modules/academicSemester/academicSemester.route';
 
 app.use('/api/v1/users/', UserRoutes);
+app.use('/api/v1/academic-semesters/', AcademicSemesterRoutes);
 
 // app.get('/', (req: Request, res: Response, next: NextFunction) => {
 //  throw new Error("Testing error")
