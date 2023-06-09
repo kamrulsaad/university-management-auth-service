@@ -1,6 +1,6 @@
 import cors from 'cors'
-import globalErrorHandler from './app/middlewares/globalErrorHandler'
 import express, { Application } from 'express'
+import globalErrorHandler from './app/middlewares/globalErrorHandler'
 const app: Application = express()
 
 app.use(cors())
@@ -13,9 +13,8 @@ import { UserRoutes } from './app/modules/user/user.route'
 
 app.use('/api/v1/users/', UserRoutes)
 
-// app.get('/', (req: Request, res: Response, next: NextFunction) => {
-//   throw new Error('Bad Request')
-//   // next('Ore Baba Error')
+// app.get('/', async (req: Request, res: Response, next: NextFunction) => {
+//   Promise.reject(new Error('Unhandled promise rejection'))
 // })
 
 //global error handler

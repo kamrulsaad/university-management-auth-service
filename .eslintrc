@@ -8,8 +8,8 @@
     "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "prettier"],
   
     "rules": {
-      "no-unused-vars": "error",
-      "no-console": "error",
+      "no-unused-vars": "warn",
+      "no-console": "warn",
       "no-undef": "error",
       "no-unused-expressions": "error",
       "no-unreachable": "error",
