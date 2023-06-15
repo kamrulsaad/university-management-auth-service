@@ -4,4 +4,6 @@ const router = express.Router();
 
 router.post('/create-faculty', AcademicFacultyController.createAcademicFaculty);
 
+router.get('/', AcademicFacultyController.getAllFaculties);
+
 export const AcademicFacultyRoutes = router;
