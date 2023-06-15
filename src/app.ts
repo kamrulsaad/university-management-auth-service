@@ -13,10 +13,6 @@ app.use(express.urlencoded({ extended: true }));
 // application routes
 app.use('/api/v1/', routes);
 
-// app.get('/', (req: Request, res: Response, next: NextFunction) => {
-//  throw new Error("Testing error")
-// })
-
 //global error handler
 app.use(globalErrorHandler);
 
