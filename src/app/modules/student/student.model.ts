@@ -1,13 +1,12 @@
 import { Schema, model } from 'mongoose';
-import { IStudent, StudentModel } from './student.interface';
 import { bloodGroup, gender } from './student.constant';
+import { IStudent, StudentModel } from './student.interface';
 
 export const studentSchema = new Schema<IStudent, StudentModel>(
   {
     id: {
       type: String,
       required: true,
-      unique: true,
     },
     name: {
       type: {
@@ -36,17 +35,14 @@ export const studentSchema = new Schema<IStudent, StudentModel>(
     email: {
       type: String,
       required: true,
-      unique: true,
     },
     contactNo: {
       type: String,
       required: true,
-      unique: true,
     },
     emergencyContactNo: {
       type: String,
       required: true,
-      unique: true,
     },
     bloodGroup: {
       type: String,
