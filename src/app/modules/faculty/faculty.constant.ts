@@ -1,16 +1,16 @@
-export const studentFilterableFields = [
+export const facultyFilterableFields = [
   'searchTerm',
   'id',
   'bloodGroup',
   'email',
   'contactNo',
   'emergencyContactNo',
+  'designation',
 ];
 
-export const studentSearchableFields = [
-  'id',
+export const facultySearchableFields = [
   'email',
-  'bloodGroup',
+  'emergencyContactNo',
   'contactNo',
   'name.firstName',
   'name.lastName',
