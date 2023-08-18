@@ -2,18 +2,17 @@ import httpStatus from 'http-status';
 import ApiError from '../../../errors/ApiError';
 import { User } from '../user/user.model';
 import {
+  IChangePassword,
   ILoginUser,
   ILoginUserResponse,
   IRefreshTokenResponse,
 } from './auth.interface';
-import { Secret } from 'jsonwebtoken';
+import { JwtPayload, Secret } from 'jsonwebtoken';
 import config from '../../../config';
 import { JwtHelper } from '../../../helpers/jwtHelper';
 
 const loginUser = async (payload: ILoginUser): Promise<ILoginUserResponse> => {
   const { id, password } = payload;
-
-  // const user = new User();
 
   const isUserExist = await User.isUserExist(id);
 
@@ -83,7 +82,58 @@ const refreshToken = async (token: string): Promise<IRefreshTokenResponse> => {
   };
 };
 
+const changePassword = async (
+  user: JwtPayload | null,
+  payload: IChangePassword
+): Promise<void> => {
+  const { oldPassword, newPassword } = payload;
+
+  // const isUserExist = await User.isUserExist(user?.userId);
+
+  const isUserExist = await User.findOne({ id: user?.userId }).select(
+    '+password'
+  );
+
+  if (!isUserExist) {
+    throw new ApiError('User does not exist', httpStatus.NOT_FOUND);
+  }
+
+  if (
+    isUserExist.password &&
+    !(await User.isPasswordMatched(oldPassword, isUserExist.password))
+  ) {
+    throw new ApiError(
+      'User Credentials do not match',
+      httpStatus.UNAUTHORIZED
+    );
+  }
+
+  // const newHashedPassword = await bcrypt.hash(
+  //   newPassword,
+  //   Number(config.bcrypt_salt_rounds)
+  // );
+
+  // const updatedData = {
+  //   password: newHashedPassword,
+  //   needsPasswordChange: false,
+  //   passwordChangedAt: new Date(),
+  // };
+
+  // await User.findOneAndUpdate(
+  //   {
+  //     id: user?.userId,
+  //   },
+  //   updatedData
+  // );
+
+  isUserExist.password = newPassword;
+  isUserExist.needsPasswordChange = false;
+
+  isUserExist.save();
+};
+
 export const AuthService = {
   loginUser,
   refreshToken,
+  changePassword,
 };

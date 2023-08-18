@@ -12,6 +12,7 @@ export type IUser = {
   faculty?: Types.ObjectId | IFaculty;
   admin?: Types.ObjectId | IAdmin;
   needsPasswordChange: boolean;
+  passwordChangedAt?: Date;
 };
 
 // export type IUserMethods = {
