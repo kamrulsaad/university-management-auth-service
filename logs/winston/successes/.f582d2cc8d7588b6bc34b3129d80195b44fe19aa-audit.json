@@ -6,14 +6,14 @@
     "auditLog": "D:\\Web Development\\Level 2\\university-management\\auth-service\\logs\\winston\\successes\\.f582d2cc8d7588b6bc34b3129d80195b44fe19aa-audit.json",
     "files": [
         {
-            "date": 1692383763991,
-            "name": "D:\\Web Development\\Level 2\\university-management\\auth-service\\logs\\winston\\successes\\phu-2023-19-08-00-success.log",
-            "hash": "1ed573570d10565de096188121c938843bcc0fbef40b7fdd55e871c5c0482973"
+            "date": 1694637330647,
+            "name": "D:\\Web Development\\Level 2\\university-management\\auth-service\\logs\\winston\\successes\\phu-2023-14-09-02-success.log",
+            "hash": "d0854755b06261bf829625d627bf3c06b580087fab302df54c1b5902276782bd"
         },
         {
-            "date": 1692385790743,
-            "name": "D:\\Web Development\\Level 2\\university-management\\auth-service\\logs\\winston\\successes\\phu-2023-19-08-01-success.log",
-            "hash": "4a8b348dd83aed75729ca576327a191a18a66285c4dd778aa0aad8e50403b5bf"
+            "date": 1694638801373,
+            "name": "D:\\Web Development\\Level 2\\university-management\\auth-service\\logs\\winston\\successes\\phu-2023-14-09-03-success.log",
+            "hash": "47b2db54cf1b66c81396a8a75784cabad6e76aa1626b84b3f5a61a6fcdefd8c0"
         }
     ],
     "hashType": "sha256"
