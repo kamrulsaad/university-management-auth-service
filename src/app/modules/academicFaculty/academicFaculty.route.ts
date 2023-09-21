@@ -13,16 +13,7 @@ router.post(
   AcademicFacultyController.createAcademicFaculty
 );
 
-router.get(
-  '/',
-  auth(
-    ENUM_USER_ROLE.ADMIN,
-    ENUM_USER_ROLE.FACULTY,
-    // ENUM_USER_ROLE.STUDENT,
-    ENUM_USER_ROLE.SUPER_ADMIN
-  ),
-  AcademicFacultyController.getAllFaculties
-);
+router.get('/', AcademicFacultyController.getAllFaculties);
 
 router.get('/:id', AcademicFacultyController.getSingleFaculty);
 

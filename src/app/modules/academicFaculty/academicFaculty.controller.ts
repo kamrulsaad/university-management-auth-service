@@ -3,7 +3,7 @@ import catchAsync from '../../../shared/catchAsync';
 import { AcademicFacultyService } from './academicFaculty.service';
 import sendResponse from '../../../shared/sendResponse';
 import httpStatus from 'http-status';
-import { AcademicFacultyFilterableFields } from './academicFaculty.constant';
+import { academicFacultyFilterableFields } from './academicFaculty.constant';
 import IPaginationOptions from '../../../interfaces/pagination';
 import pick from '../../../shared/pick';
 import { paginationFields } from '../../../constants/pagination';
@@ -27,7 +27,7 @@ const createAcademicFaculty = catchAsync(
 );
 
 const getAllFaculties = catchAsync(async (req: Request, res: Response) => {
-  const filters = pick(req.query, AcademicFacultyFilterableFields);
+  const filters = pick(req.query, academicFacultyFilterableFields);
   const paginationOptions: IPaginationOptions = pick(
     req.query,
     paginationFields

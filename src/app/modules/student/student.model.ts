@@ -125,10 +125,7 @@ export const studentSchema = new Schema<IStudent, StudentModel>(
       ref: 'AcademicSemester',
       required: true,
     },
-    profileImage: {
-      type: String,
-      // required: true,
-    },
+    profileImage: String,
   },
   {
     timestamps: true,

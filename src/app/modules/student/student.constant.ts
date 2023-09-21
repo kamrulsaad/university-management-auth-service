@@ -16,3 +16,8 @@ export const studentSearchableFields = [
   'name.lastName',
   'name.middleName',
 ];
+
+export const gender = ['male', 'female'];
+export const bloodGroup = ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'];
+
+export const EVENT_STUDENT_UPDATED = 'student-updated';
