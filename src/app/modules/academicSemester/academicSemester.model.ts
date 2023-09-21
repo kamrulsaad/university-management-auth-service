@@ -24,7 +24,7 @@ const academicSemesterSchema = new Schema<IAcademicSemester>(
       enum: AcademicSemesterCodes,
     },
     year: {
-      type: String,
+      type: Number,
       required: true,
     },
     startMonth: {
@@ -36,6 +36,10 @@ const academicSemesterSchema = new Schema<IAcademicSemester>(
       type: String,
       required: true,
       enum: AcademicSemesterMonths,
+    },
+    syncId: {
+      type: String,
+      required: true,
     },
   },
   {

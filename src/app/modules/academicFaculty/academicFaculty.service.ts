@@ -4,8 +4,10 @@ import ApiError from '../../../errors/ApiError';
 import { paginationHelper } from '../../../helpers/paginationHelper';
 import { IGenericResponse } from '../../../interfaces/common';
 import IPaginationOptions from '../../../interfaces/pagination';
-import { AcademicFacultySearchableFields } from './academicFaculty.constant';
+import { academicFacultySearchableFields } from './academicFaculty.constant';
 import {
+  AcademicFacultyCreatedEvent,
+  AcademicFacultyUpdatedEvent,
   IAcademicFaculty,
   IAcademicFacultyFilters,
 } from './academicFaculty.interface';
@@ -36,7 +38,7 @@ const getAllFaculties = async (
 
   if (searchTerm) {
     andConditions.push({
-      $or: AcademicFacultySearchableFields.map(field => ({
+      $or: academicFacultySearchableFields.map(field => ({
         [field]: {
           $regex: searchTerm,
           $options: 'i',
@@ -104,10 +106,39 @@ const deleteFaculty = async (id: string): Promise<IAcademicFaculty | null> => {
   return result;
 };
 
+const insertIntoDBFromEvent = async (
+  e: AcademicFacultyCreatedEvent
+): Promise<void> => {
+  await AcademicFaculty.create({
+    syncId: e.id,
+    title: e.title,
+  });
+};
+
+const updateOneInDBFromEvent = async (
+  e: AcademicFacultyUpdatedEvent
+): Promise<void> => {
+  await AcademicFaculty.findOneAndUpdate(
+    { syncId: e.id },
+    {
+      $set: {
+        title: e.title,
+      },
+    }
+  );
+};
+
+const deleteOneFromDBFromEvent = async (syncId: string): Promise<void> => {
+  await AcademicFaculty.findOneAndDelete({ syncId });
+};
+
 export const AcademicFacultyService = {
   createAcademicFaculty,
   getAllFaculties,
   getSingleFaculty,
   updateFaculty,
   deleteFaculty,
+  insertIntoDBFromEvent,
+  updateOneInDBFromEvent,
+  deleteOneFromDBFromEvent,
 };
