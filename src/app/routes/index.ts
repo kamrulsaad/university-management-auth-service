@@ -20,7 +20,7 @@ const moduleroutes = [
     route: AcademicSemesterRoutes,
   },
   {
-    path: '/academic-faculty',
+    path: '/academic-faculties',
     route: AcademicFacultyRoutes,
   },
   {
@@ -28,7 +28,7 @@ const moduleroutes = [
     route: AcademicDepartmentRoutes,
   },
   {
-    path: '/management-department',
+    path: '/management-departments',
     route: ManagementDepartmentRoutes,
   },
   {
@@ -40,7 +40,7 @@ const moduleroutes = [
     route: FacultyRoutes,
   },
   {
-    path: '/admin',
+    path: '/admins',
     route: AdminRoutes,
   },
   {

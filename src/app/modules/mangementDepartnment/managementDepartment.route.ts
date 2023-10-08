@@ -5,6 +5,10 @@ import { ManagementDepartmentValidation } from './managementDepartment.validatio
 
 const router = express.Router();
 
+router.get('/', ManagementDepartmentController.getAllDepartments);
+
+router.get('/:id', ManagementDepartmentController.getSingleDepartment);
+
 router.post(
   '/create-department',
   validateRequest(
@@ -12,8 +16,6 @@ router.post(
   ),
   ManagementDepartmentController.createDepartment
 );
-
-router.get('/:id', ManagementDepartmentController.getSingleDepartment);
 
 router.patch(
   '/:id',
@@ -24,7 +26,5 @@ router.patch(
 );
 
 router.delete('/:id', ManagementDepartmentController.deleteDepartment);
-
-router.get('/', ManagementDepartmentController.getAllDepartments);
 
 export const ManagementDepartmentRoutes = router;
