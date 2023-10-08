@@ -1,0 +1,8 @@
+[PH] error: Error: MongoRuntimeError: Attempted illegal state transition from [TRANSACTION_COMMITTED] to [TRANSACTION_ABORTED] ❌ Mon Oct 09 2023 3:1:32
+[PH] error: Error: MongoRuntimeError: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_COMMITTED] ❌ Mon Oct 09 2023 3:3:57
+[PH] error: Error: MongoRuntimeError: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_COMMITTED] ❌ Mon Oct 09 2023 3:4:54
+[PH] error: Error: MongoRuntimeError: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_COMMITTED] ❌ Mon Oct 09 2023 3:5:52
+[PH] error: Error: ValidationError: title: Path `title` is required. ❌ Mon Oct 09 2023 3:8:9
+[PH] error: Error: MongoRuntimeError: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_COMMITTED] ❌ Mon Oct 09 2023 3:14:21
+[PH] error: Error: MongoRuntimeError: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_COMMITTED] ❌ Mon Oct 09 2023 3:15:7
+[PH] error: Error: MongoRuntimeError: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_COMMITTED] ❌ Mon Oct 09 2023 3:15:57

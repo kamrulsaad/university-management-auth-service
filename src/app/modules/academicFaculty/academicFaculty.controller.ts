@@ -13,8 +13,6 @@ const createAcademicFaculty = catchAsync(
   async (req: Request, res: Response) => {
     const { ...academicFaculty } = req.body;
 
-    console.log(academicFaculty);
-
     const result = await AcademicFacultyService.createAcademicFaculty(
       academicFaculty
     );
